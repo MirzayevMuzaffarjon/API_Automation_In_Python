@@ -5,8 +5,8 @@ import pytest_check as check
 from jsonschema import validate, ValidationError
 
 
-class BaseClient:
-    def __init__(self, session = None):
+class Client:
+    def __init__(self, session = None ):
         self.session = session or requests.Session()
 
     def send_request(self, method, url, params=None, headers=None, json=None, data=None, files=None, timeout=None):
@@ -29,7 +29,7 @@ class BaseClient:
                 headers = headers,
                 json = json,
                 data = data,
-                files=files,
+                files = files,
                 timeout = timeout
             )
 
